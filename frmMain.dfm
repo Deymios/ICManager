@@ -49,8 +49,7 @@ object MainForm: TMainForm
       DefaultColWidth = 100
       DrawingStyle = gdsGradient
       FixedCols = 0
-      RowCount = 1
-      FixedRows = 0
+      RowCount = 2
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goRowSelect]
       TabOrder = 0
       ExplicitTop = -1

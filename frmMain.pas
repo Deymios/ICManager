@@ -23,7 +23,7 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+    procedure AfterConstruction; override;
   end;
 
 var
@@ -32,5 +32,19 @@ var
 implementation
 
 {$R *.dfm}
+
+{ TMainForm }
+
+procedure TMainForm.AfterConstruction;
+begin
+  inherited;
+
+  grdClaims.Cells[0, 0] := 'Name';
+  grdClaims.Cells[1, 0] := 'Gross Claim';
+  grdClaims.Cells[1, 0] := 'Deductible';
+  grdClaims.Cells[1, 0] := 'Net Claim';
+  grdClaims.Cells[1, 0] := 'Year';
+  grdClaims.Cells[1, 0] := 'Type';
+end;
 
 end.
