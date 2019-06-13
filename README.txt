@@ -1,4 +1,4 @@
-Hello! I have a few word to say about this project :)
+Hello! I have a few words to say about this project :)
 
 It is 2 AM and I've decided to stop developing it. I think the main idea is quiet clear... 
 Several things:
