@@ -2,12 +2,12 @@ unit uClaim;
 
 interface
 
-type
-  TClaim = class
-  private
-    FModified: Boolean;
+uses
+  uBaseObject;
 
-    FId: Integer;
+type
+  TClaim = class(TDBObject)
+  private
     FName: string;
     FGrossClaim: Currency;
     FDeductible: Currency;
@@ -19,10 +19,9 @@ type
     function GetNetClaim: Currency;
     procedure SetYear(const Value: Integer);
     procedure SetClaimType(const Value: Integer);
-  private
-    function AlterProperty<T>(AOldValue: T; ANewValue: T): T;
   public
-    property Id: Integer read FId;
+    procedure Reset; override;
+  public
     property Name: string read FName write SetName;
     property GrossClaim: Currency read FGrossClaim write SetGrossClaim;
     property Deductible: Currency read FDeductible write SetDeductible;
@@ -35,20 +34,18 @@ implementation
 
 { TClaim }
 
-function TClaim.AlterProperty<T>(AOldValue, ANewValue: T): T;
-begin
-  if AOldValue <> ANewValue then
-  begin
-    FModified := True;
-    Result := ANewValue;
-  end
-  else
-    Result := ANewValue;
-end;
-
 function TClaim.GetNetClaim: Currency;
 begin
   Result := FGrossClaim - FDeductible;
+end;
+
+procedure TClaim.Reset;
+begin
+  FName := '';
+  FGrossClaim := 0;
+  FDeductible := 0;
+  FYear := 0;
+  FClaimType := 0;
 end;
 
 procedure TClaim.SetClaimType(const Value: Integer);

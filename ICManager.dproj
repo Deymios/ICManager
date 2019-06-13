@@ -107,6 +107,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="classes\objects\uClaim.pas"/>
+        <DCCReference Include="classes\general\uUnitOfWork.pas"/>
+        <DCCReference Include="classes\objects\uBaseObject.pas"/>
+        <DCCReference Include="classes\objects\uClaimType.pas"/>
+        <DCCReference Include="classes\general\uObjectListHelper.pas"/>
+        <DCCReference Include="classes\editors\uEditorIntf.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

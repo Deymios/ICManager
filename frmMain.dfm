@@ -11,6 +11,7 @@ object MainForm: TMainForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object pnlButtons: TPanel
@@ -38,7 +39,6 @@ object MainForm: TMainForm
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 40
     object grdClaims: TStringGrid
       Left = 0
       Top = 0
@@ -51,8 +51,8 @@ object MainForm: TMainForm
       FixedCols = 0
       RowCount = 2
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goRowSelect]
+      PopupMenu = pmClaims
       TabOrder = 0
-      ExplicitTop = -1
     end
   end
   object pmClaims: TPopupMenu
@@ -70,12 +70,17 @@ object MainForm: TMainForm
     Top = 49
     object actAddClaim: TAction
       Caption = 'New Claim'
+      OnExecute = actAddClaimExecute
     end
     object actDeleteClaim: TAction
       Caption = 'Delete'
+      OnExecute = actDeleteClaimExecute
+      OnUpdate = actDeleteClaimUpdate
     end
     object actEditClaim: TAction
       Caption = 'Edit...'
+      OnExecute = actEditClaimExecute
+      OnUpdate = actEditClaimUpdate
     end
   end
 end
